@@ -1,27 +1,41 @@
-﻿// Задача 26: Напишите программу, которая принимает на вход число и выдаёт количество цифр в числе.
-// 456 -> 3
-// 78 -> 2
-// 89126 -> 5
+﻿// Задача 28: Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
+// 4 -> 24
+// 5 -> 120
 Console.Clear();
 Console.Write("Введите число: ");
-string cc = Console.ReadLine();
-int Countnumbers(string count)
+int number = int.Parse(Console.ReadLine());
+int sum = 1;
+int Num_multiplication(int num)
 {
-    int a = cc.Length;
-    return cc.Length;
+    for (int i = 1 ; i <= num ; i++)
+    {
+        sum = sum * i;
+    }
+    return sum;
 }
 
-foreach ( char i in cc)
+if(number % 2 == 0 )
 {
-    if (i == '-')
+    if (number<0)
     {
-        cc = cc.Replace("-" , "");
-        Console.WriteLine($"-{cc} -> {Countnumbers(cc)}");
-        break;
+        int number1 = Math.Abs(number);
+        Console.Write($"{number} -> {Num_multiplication(number1)}");
     }
-    else 
+    else
     {
-        Console.WriteLine($"{cc} -> {Countnumbers(cc)}");
-        break;
+        Console.Write($"{number} -> {Num_multiplication(number)} ");
+    }
+} 
+
+else 
+{
+    if (number<0)
+    {
+        Console.WriteLine("Ошибка");
+    }
+    else
+    {
+        Console.Write($"{number} -> {Num_multiplication(number)} ");
     }
 }
+
