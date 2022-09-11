@@ -8,6 +8,20 @@ string cc = Console.ReadLine();
 int Countnumbers(string count)
 {
     int a = cc.Length;
-    return (int)cc.Length;
+    return cc.Length;
 }
-Console.Write($"{cc} -> {Countnumbers(cc)}");
+
+foreach ( char i in cc)
+{
+    if (i == '-')
+    {
+        cc = cc.Replace("-" , "");
+        Console.WriteLine($"-{cc} -> {Countnumbers(cc)}");
+        break;
+    }
+    else 
+    {
+        Console.WriteLine($"{cc} -> {Countnumbers(cc)}");
+        break;
+    }
+}
