@@ -1,41 +1,23 @@
-﻿// Задача 28: Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
-// 4 -> 24
-// 5 -> 120
+﻿// Задача 30: Напишите программу, которая выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке.
+// [1,0,1,1,0,1,0,0]
 Console.Clear();
-Console.Write("Введите число: ");
-int number = int.Parse(Console.ReadLine());
-int sum = 1;
-int Num_multiplication(int num)
+int[] array = new int [8];
+void Random_array(int[] arr)
 {
-    for (int i = 1 ; i <= num ; i++)
+    int index = 0;
+    Console.Write("[");
+    while ( index < arr.Length-1)
     {
-        sum = sum * i;
+        arr[index] = new Random().Next(0 , 2);
+        Console.Write($"{arr[index]} , ");
+        index++;
     }
-    return sum;
+   
+    Console.Write($"{arr[index]} ");
+     Console.Write("]");
+
 }
 
-if(number % 2 == 0 )
-{
-    if (number<0)
-    {
-        int number1 = Math.Abs(number);
-        Console.Write($"{number} -> {Num_multiplication(number1)}");
-    }
-    else
-    {
-        Console.Write($"{number} -> {Num_multiplication(number)} ");
-    }
-} 
+Random_array(array);
 
-else 
-{
-    if (number<0)
-    {
-        Console.WriteLine("Ошибка");
-    }
-    else
-    {
-        Console.Write($"{number} -> {Num_multiplication(number)} ");
-    }
-}
 
