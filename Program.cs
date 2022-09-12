@@ -1,23 +1,29 @@
-﻿// Задача 30: Напишите программу, которая выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке.
-// [1,0,1,1,0,1,0,0]
+﻿//     Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+
+// 3, 5 -> 243 (3⁵)
+
+// 2, 4 -> 16
 Console.Clear();
-int[] array = new int [8];
-void Random_array(int[] arr)
+int multiplicathion_number(int A , int B)
 {
-    int index = 0;
-    Console.Write("[");
-    while ( index < arr.Length-1)
+    int result = 1;
+    for(int i = 1 ; i <= B ; i++)
     {
-        arr[index] = new Random().Next(0 , 2);
-        Console.Write($"{arr[index]} , ");
-        index++;
+        result = result*A;
     }
-   
-    Console.Write($"{arr[index]} ");
-     Console.Write("]");
-
+    return result;
 }
-
-Random_array(array);
-
+Console.Clear();
+Console.Write("Введите число а: ");
+int a = int.Parse(Console.ReadLine());
+Console.Write("Введите число б: ");
+int b = int.Parse(Console.ReadLine());
+if ( b < 0)
+{
+    Console.WriteLine("Ошибка(число отрицательное)");
+}
+else
+{
+    Console.Write($"{a} , {b} ->  {multiplicathion_number(a , b)}");
+}
 
