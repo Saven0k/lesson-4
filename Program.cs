@@ -1,29 +1,22 @@
-﻿//     Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-
-// 3, 5 -> 243 (3⁵)
-
-// 2, 4 -> 16
+﻿// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
 Console.Clear();
-int multiplicathion_number(int A , int B)
+int  sum_in_number(int aa)
 {
-    int result = 1;
-    for(int i = 1 ; i <= B ; i++)
+    int result = 0;
+    int cc = Convert.ToString(aa).Length;
+    int second = 0;
+    for( int i = 0 ; i < cc ; i++)
     {
-        result = result*A;
+        second = aa - aa % 10;
+        result = result + (aa - second);
+        aa = aa / 10;
     }
     return result;
 }
-Console.Clear();
-Console.Write("Введите число а: ");
-int a = int.Parse(Console.ReadLine());
-Console.Write("Введите число б: ");
-int b = int.Parse(Console.ReadLine());
-if ( b < 0)
-{
-    Console.WriteLine("Ошибка(число отрицательное)");
-}
-else
-{
-    Console.Write($"{a} , {b} ->  {multiplicathion_number(a , b)}");
-}
-
+Console.WriteLine("Введите число: ");
+int a = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToString(a).Length;
+Console.WriteLine($"{a} -> {sum_in_number(a)}");
